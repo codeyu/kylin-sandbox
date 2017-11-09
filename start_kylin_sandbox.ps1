@@ -124,6 +124,7 @@ docker exec -t kylin-sandbox su hbase - -c "/usr/hdp/2.5.0.0-1245/hbase/bin/hbas
 docker exec -t kylin-sandbox su hbase - -c "/usr/hdp/2.5.0.0-1245/hbase/bin/hbase-daemon.sh --config /etc/hbase/conf start regionserver" | Out-Host
 
 Write-Host "Starting Kylin"
+docker exec kylin-sandbox su hdfs -l -c 'hdfs dfsadmin -safemode leave' | Out-Host
 docker exec kylin-sandbox /usr/local/kylin/bin/kylin.sh start | Out-Host
 
 Write-Host "kylin-sandbox is good to do.  Press any key to continue..."
