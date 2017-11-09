@@ -1,5 +1,6 @@
 FROM sandbox-hdp
 
+# https://stackoverflow.com/questions/46286326/cannot-retrieve-repository-metadata-repomd-xml-for-repository-sandbox-please
 # Fixed http://dev2.hortonworks.com.s3.amazonaws.com/repo/dev/master/utils/repodata/repomd.xml: [Errno 14] PYCURL ERROR 22 - "The requested URL returned error: 403 Forbidden"
 RUN mv /etc/yum.repos.d/sandbox.repo /tmp
 

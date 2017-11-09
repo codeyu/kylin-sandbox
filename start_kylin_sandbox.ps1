@@ -120,8 +120,8 @@ docker exec -d kylin-sandbox /etc/init.d/splash | Out-Host
 docker exec -d kylin-sandbox /etc/init.d/shellinaboxd start | Out-Host
 
 Write-Host "Starting HBase"
-docker exec -t kylin-sandbox su hbase - -c "/usr/hdp/2.6.1.0-129/hbase/bin/hbase-daemon.sh --config /etc/hbase/conf start master; sleep 20" | Out-Host
-docker exec -t kylin-sandbox su hbase - -c "/usr/hdp/2.6.1.0-129/hbase/bin/hbase-daemon.sh --config /etc/hbase/conf start regionserver" | Out-Host
+docker exec -t kylin-sandbox su hbase - -c "/usr/hdp/2.5.0.0-1245/hbase/bin/hbase-daemon.sh --config /etc/hbase/conf start master; sleep 20" | Out-Host
+docker exec -t kylin-sandbox su hbase - -c "/usr/hdp/2.5.0.0-1245/hbase/bin/hbase-daemon.sh --config /etc/hbase/conf start regionserver" | Out-Host
 
 Write-Host "Starting Kylin"
 docker exec kylin-sandbox /usr/local/kylin/bin/kylin.sh start | Out-Host
