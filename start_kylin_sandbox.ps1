@@ -120,6 +120,9 @@ docker exec -d kylin-sandbox /etc/init.d/tutorials start | Out-Host
 docker exec -d kylin-sandbox /etc/init.d/splash | Out-Host
 docker exec -d kylin-sandbox /etc/init.d/shellinaboxd start | Out-Host
 
+Write-Host "Waiting until Hadoop service is started..."
+Start-sleep -s 60
+
 Write-Host "Starting HBase"
 docker exec -t kylin-sandbox su hbase - -c "/usr/hdp/2.5.0.0-1245/hbase/bin/hbase-daemon.sh --config /etc/hbase/conf start master; sleep 20" | Out-Host
 docker exec -t kylin-sandbox su hbase - -c "/usr/hdp/2.5.0.0-1245/hbase/bin/hbase-daemon.sh --config /etc/hbase/conf start regionserver" | Out-Host
