@@ -131,6 +131,9 @@ Write-Host "Starting Kylin"
 docker exec kylin-sandbox su hdfs -l -c 'hdfs dfsadmin -safemode leave' | Out-Host
 docker exec kylin-sandbox /usr/local/kylin/bin/kylin.sh start | Out-Host
 
+Write-Host "Loading sample data..."
+docker exec kylin-sandbox /usr/local/kylin/bin/sample.sh | Out-Host
+
 Write-Host "kylin-sandbox is good to do.  Press any key to continue..."
 $x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 
