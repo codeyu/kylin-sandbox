@@ -37,3 +37,6 @@ Once this script is done running, you should be able to access the following:
 - Kylin ([http://localhost:7070/kylin](http://localhost:7070/kylin))
     - Username: ADMIN
     - Password: KYLIN
+
+## SSH 
+ login as 'root' with password 'hadoop'
